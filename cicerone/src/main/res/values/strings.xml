@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">BackStack</string>
+    <string name="error">Error</string>
+    <string name="auth_screen">Auth Screen</string>
+    <string name="navigate_to_main">Navigate to Main</string>
+    <string name="account">Account</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+
+    <string name="fragment_a">Fragment Home</string>
+    <string name="fragment_b">Fragment Search</string>
+    <string name="fragment_c">Fragment Account</string>
+
+    <string name="home_inner_1_fragment">Home Inner 1 Fragment</string>
+    <string name="home_inner_2_fragment">Home Inner 2 Fragment</string>
+    <string name="home_inner_3_fragment">Home Inner 3 Fragment</string>
+    <string name="navigate_to_home_inner_2">Navigate to Home Inner 2</string>
+    <string name="navigate_to_home_inner_3">Navigate to Home Inner 3</string>
+
+    <string name="search_inner_1_fragment">Search Inner 1 Fragment</string>
+    <string name="search_inner_2_fragment">Search Inner 2 Fragment</string>
+    <string name="search_inner_3_fragment">Search Inner 3 Fragment</string>
+    <string name="navigate_to_search_inner_2">Navigate to Search Inner 2</string>
+    <string name="navigate_to_search_inner_3">Navigate to Search Inner 3</string>
+    <string name="back">Back</string>
+
+</resources>

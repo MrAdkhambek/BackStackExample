@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_navigation_a.xml"
+    app:startDestination="@id/homeInner1Fragment">
+
+
+    <fragment
+        android:id="@+id/homeInner1Fragment"
+        android:name="mr.adkhambek.nav.ui.bottom.a.child.a.HomeInner1Fragment"
+        android:label="HomeInner1Fragment">
+
+        <action
+            android:id="@+id/action_to_homeInner2Fragment"
+            app:destination="@id/homeInner2Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeInner2Fragment"
+        android:name="mr.adkhambek.nav.ui.bottom.a.child.b.HomeInner2Fragment"
+        android:label="HomeInner1Fragment">
+
+        <action
+            android:id="@+id/action_to_homeInner3Fragment"
+            app:destination="@id/homeInner3Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeInner3Fragment"
+        android:name="mr.adkhambek.nav.ui.bottom.a.child.c.HomeInner3Fragment"
+        android:label="HomeInner1Fragment" />
+
+</navigation>

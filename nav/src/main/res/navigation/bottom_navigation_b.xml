@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_navigation_b.xml"
+    app:startDestination="@id/searchInner1Fragment">
+
+
+    <fragment
+        android:id="@+id/searchInner1Fragment"
+        android:name="mr.adkhambek.nav.ui.bottom.b.child.a.SearchInner1Fragment"
+        android:label="SearchInner1Fragment">
+
+        <action
+            android:id="@+id/action_to_searchInner2Fragment"
+            app:destination="@id/searchInner2Fragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/searchInner2Fragment"
+        android:name="mr.adkhambek.nav.ui.bottom.b.child.b.SearchInner2Fragment"
+        android:label="SearchInner1Fragment">
+
+        <action
+            android:id="@+id/actiont_to_searchInner3Fragment"
+            app:destination="@id/searchInner3Fragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/searchInner3Fragment"
+        android:name="mr.adkhambek.nav.ui.bottom.b.child.c.SearchInner3Fragment"
+        android:label="SearchInner1Fragment" />
+
+</navigation>

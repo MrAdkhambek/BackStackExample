@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_navigation_c.xml"
+    app:startDestination="@id/accountInner1Fragment">
+
+    <fragment
+        android:id="@+id/accountInner1Fragment"
+        android:name="mr.adkhambek.nav.ui.bottom.c.child.AccountInner1Fragment"
+        android:label="AccountInner1Fragment" />
+</navigation>
