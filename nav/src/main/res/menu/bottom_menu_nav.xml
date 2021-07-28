@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/bottom_navigation_a"
         android:icon="@drawable/ic_home"
         android:orderInCategory="1"
         android:title="@string/home"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/searchFragment"
+        android:id="@+id/bottom_navigation_b"
         android:icon="@drawable/ic_search"
         android:orderInCategory="2"
         android:title="@string/search"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/accountFragment"
+        android:id="@+id/bottom_navigation_c"
         android:icon="@drawable/ic_account"
         android:orderInCategory="2"
         android:title="@string/account"

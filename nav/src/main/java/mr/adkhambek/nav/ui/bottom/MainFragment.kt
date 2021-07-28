@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import mr.adkhambek.nav.R
 import mr.adkhambek.nav.databinding.MainFragmentBinding
-import mr.adkhambek.nav.ui.BackButtonListener
 
 
 @AndroidEntryPoint
-class MainFragment : Fragment(R.layout.main_fragment), BackButtonListener {
+class MainFragment : Fragment(R.layout.main_fragment) {
 
     private val vm: MainViewModel by viewModels()
 
@@ -23,49 +23,11 @@ class MainFragment : Fragment(R.layout.main_fragment), BackButtonListener {
     }
 
     private fun setUpNavigation(binding: MainFragmentBinding) {
-        selectTab(Tab.HOME)
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.homeFragment -> selectTab(Tab.HOME)
-                R.id.searchFragment -> selectTab(Tab.SEARCH)
-                R.id.accountFragment -> selectTab(Tab.ACCOUNT)
-                else -> throw IllegalArgumentException("Unknown menu item by id = ${it.itemId}")
-            }
-            true
-        }
-    }
-
-    private val currentTabFragment: Fragment?
-        get() = childFragmentManager.fragments.firstOrNull { !it.isHidden }
-
-    private fun selectTab(tab: Tab) {
-        val currentFragment = currentTabFragment
-        val newFragment = childFragmentManager.findFragmentByTag(tab.name)
-
-        if (currentFragment != null && newFragment != null && currentFragment == newFragment) return
-
-        childFragmentManager.beginTransaction().apply {
-            if (newFragment == null) add(
-                R.id.bottom_host_fragment,
-                tab.create(childFragmentManager.fragmentFactory),
-                tab.name
-            )
-
-            currentFragment?.let {
-                setMaxLifecycle(it, Lifecycle.State.STARTED)
-                hide(it)
-            }
-
-            newFragment?.let {
-                setMaxLifecycle(it, Lifecycle.State.RESUMED)
-                show(it)
-            }
-        }.commitNow()
-    }
-
-    override fun onBackPressed(): Boolean {
-        val listener = currentTabFragment as? BackButtonListener?
-        return listener?.onBackPressed() ?: true
+        val navHostFragment = childFragmentManager.findFragmentById(
+            R.id.bottom_host_fragment
+        ) as NavHostFragment
+        val navController = navHostFragment.navController
+        binding.bottomNavigationView.setupWithNavController(navController)
     }
 }
 
